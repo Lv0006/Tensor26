@@ -42,7 +42,7 @@ export const useAssessmentAPI = () => {
         const message = err instanceof Error ? err.message : 'Failed to analyze assessment';
         setError(message);
         console.error('Assessment API error:', err);
-        return null;
+        throw err;
       } finally {
         setLoading(false);
       }

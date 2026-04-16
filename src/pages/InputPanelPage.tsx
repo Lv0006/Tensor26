@@ -104,7 +104,7 @@ const InputPanelPage = () => {
         notes,
         uclaLoneliness,
       });
-      setResult(analysisResult);
+      setResult(analysisResult ?? buildPrediction(mood, Number(interactions) || 0, Number(socialConnections) || 0));
     } catch (err) {
       console.error('API error:', err);
       // Fallback to mock prediction on API failure
